@@ -1,0 +1,203 @@
+@use '../vars'
+
+.price
+  display: flex
+  gap: 44px
+  @include vars.container
+  margin-top: 64px
+
+  @media (max-width:1280px)
+    margin: 64px 20px 0 20px
+    gap: 24px
+
+  @media (max-width: 770px)
+    flex-direction: column
+    margin-top: 34px
+
+  .price__img
+    width: 474px
+    height: 527px
+    position: relative
+    flex-shrink: 0
+
+    @media (max-width:1280px)
+      width: calc(474px / 1.5)
+      height: calc(527px /1.5)
+
+    @media (max-width: 770px)
+      width: auto
+      height: 402px
+      margin: 0 auto
+
+    &::before
+      content: ''
+      width: 435px
+      height: 405px
+      background-image: url('../img/photo/price-back.png')
+      z-index: 0
+      @include vars.absolute-center
+
+      @media (max-width:1280px)
+        width: calc(435px / 1.5)
+        height: calc(405px /1.5)
+
+      @media (max-width: 770px)
+        width: 309px
+        max-width: 82vw
+        max-height: 75.47vw
+        height: 286px
+
+    &::after
+      content: ''
+      width: 609px
+      height: 570px
+      background-image: url('../img/photo/price1.png')
+      mix-blend-mode: color-burn
+      z-index: 2
+      @include vars.absolute-center
+
+      @media (max-width:1280px)
+        width: calc(609px / 1.5)
+        height: calc(570px  / 1.5)
+
+      @media (max-width: 770px)
+        width: 420px
+        height: 402px
+        max-width: 95vw
+        max-height: 95vw
+      
+    .price__img-img
+      @include vars.absolute-center
+      z-index: 1
+      width: 530px
+      height: 568px
+
+      @media (max-width:1280px)
+        width: calc(530px / 1.5)
+        height: calc(568px / 1.5) 
+
+      @media (max-width: 770px)
+        width: 375px
+        height: auto
+        max-width: 95vw
+
+  .price__info
+    text-align: start
+    .price__text
+      font-size: 36px
+      color: vars.$text2
+      text-transform: uppercase
+      line-height: 135%
+      letter-spacing: 0
+      font-family: vars.$marri
+      word-break: keep-all 
+      overflow-wrap: normal
+
+      @media (max-width:1280px)
+        font-size: 28px
+
+      .price__text-span
+        color: vars.$red
+        font-weight: 700
+
+      br
+        display: none
+
+        @media (max-width:400px)
+          display: block
+
+  .price__table
+    width: 100%
+    border-collapse: collapse
+    margin: 60px 0 48px 0
+    font-size: 20px
+    color: vars.$text2
+    line-height: 120%
+    letter-spacing: 0px
+
+    @media (max-width: 1280px)
+      font-size: 16px
+      margin: 30px 0 22px 0
+
+    @media (max-width: 770px)
+      display: flex
+      width: 100%
+      margin-top: 44px
+      font-size: 20px
+
+    .price__tbody
+      width: 100%
+
+    .price__table-row
+      width: 100%
+      padding: 16px 0
+      
+      &:not(:last-child)
+        border-bottom: 2px solid vars.$border
+
+      @media (max-width: 770px)
+        display: flex
+        flex-direction: column
+        width: 100%
+        gap: 12px
+
+      .price__table-header
+        text-align: start
+        padding: 16px 16px 16px 0
+        border-right: 2px solid vars.$border
+        font-weight: 400
+        opacity: .7
+        width: 306px
+
+        @media (max-width: 1280px)
+          width: auto
+
+        @media (max-width: 770px)
+          display: block
+          width: 100%
+          padding: 0 0 4px 0
+          border-right: none
+
+      .price__table-data
+        padding: 16px 0 16px 16px
+        font-weight: 600
+
+        @media (max-width: 770px)
+          display: block
+          width: 100%
+          padding: 0 0 12px 0
+
+        .price__table-span
+          text-decoration: line-through
+          text-decoration-color: #ff0000
+          text-decoration-thickness: 2px
+          color: #000000
+
+      &:first-child
+        padding-top: 0
+        *
+          padding-top: 0
+
+        @media (max-width: 770px)
+          .price__table-header
+            padding-top: 0
+
+      &:last-child
+        padding-bottom: 0
+        * 
+          padding-bottom: 0
+
+        @media (max-width: 770px)
+          .price__table-data
+            padding-bottom: 0
+
+  .price__contact
+    color: vars.$blue
+    font-size: 20px
+
+    @media (max-width: 770px)
+      font-size: 18px
+          
+
+        
+

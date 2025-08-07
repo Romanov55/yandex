@@ -1,0 +1,51 @@
+@use '../vars'
+
+.lection
+  display: flex
+  gap: 64px
+  align-items: center
+  @include vars.container
+  margin-top: 80px
+
+  @media (max-width: 1280px)
+    margin: 80px 20px 0 20px
+
+  @media (max-width: 770px)
+    flex-direction: column
+    gap: 24px
+    margin-top: 48px
+
+  .lection__text
+    font-family: vars.$marri
+    font-size: 36px
+    text-transform: uppercase
+    line-height: 135%
+    letter-spacing: 0
+
+    @media (max-width: 1280px)
+      font-size: 28px
+
+    .lection__text-span
+      color: vars.$red
+      font-weight: 700
+
+    .lection__text-desc
+      @media (max-width: 770px)
+        display: none
+
+    &.mobile
+      display: none
+
+      @media (max-width: 770px)
+        display: block
+
+        .lection__text-desc
+          display: block
+
+  .lection__img
+    @media (max-width: 1280px)
+      width: 40%
+
+    @media (max-width: 770px)
+      width: 100%
+      max-width: 394px

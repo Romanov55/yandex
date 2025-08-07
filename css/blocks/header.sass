@@ -1,0 +1,168 @@
+@use '../vars'
+
+.header
+  background-color: vars.$back
+  position: relative
+  height: 700px
+  overflow: hidden
+
+  @media (max-width: 770px)
+    height: 821px
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-image: url('../img/photo/back.png')
+    mix-blend-mode: color-burn
+    z-index: 1
+
+  .header__inside
+    position: relative
+    z-index: 3
+
+  .header__city
+    position: absolute
+    z-index: 2  
+    left: 50%
+    bottom: 0
+    transform: translateX(-50%)
+
+    &.mobile
+      display: none
+
+    @media (max-width: 1280px)
+      transform: translateX(-40%)
+
+    @media (max-width: 770px)
+      transform: translateX(-50%)
+      height: 410px
+      width: auto
+      display: none
+      bottom: -20px
+
+      &.mobile
+        display: block
+
+    @media (max-width: 500px)
+      transform: translateX(-67%)
+
+  .header__inside
+    max-width: 1222px
+    margin: 0 auto
+    padding-top: 26px
+
+    @media (max-width: 1280px)
+      margin: 0 20px
+
+  .header__top
+    display: flex
+    gap: 2px
+
+    @media (max-width: 770px)
+      gap: 1.5px
+
+    .header__top-text
+      font-size: 16.65px
+      text-transform: uppercase
+      color: vars.$text1
+      font-weight: 700
+      line-height: 108%
+      align-items: center
+
+      @media (max-width: 770px)
+        font-size: 14.42px
+
+    .header__top-horse
+      @media (max-width: 770px)
+        width: 18.75px
+        height: 27px
+
+  .header__title
+    margin: 62px 0 24px 0
+    color: vars.$text2
+    font-size: 60px
+    line-height: 110%
+    max-width: 542px
+    text-transform: uppercase
+    font-family: vars.$cabin
+    font-weight: 400
+
+    @media (max-width: 770px)
+      font-size: 36px
+      margin-top: 40px
+
+    .header__title-span
+      display: block
+      text-align: center
+      font-family: vars.$marri
+
+  .header__text
+    text-align: center
+    max-width: 542px
+    line-height: 130%
+    font-size: 18px
+    letter-spacing: 0
+
+    @media (max-width: 770px)
+      text-align: start
+      max-width: none
+
+      br
+        display: none
+
+  .header__bottom
+    display: flex
+    gap: 16px
+    max-width: 542px
+    margin-top: 40px
+    font-size: 16px
+    line-height: 130%
+    letter-spacing: 0
+
+    @media (max-width: 770px)
+      flex-direction: column
+      margin-top: 32px
+      gap: 14px
+      max-width: none
+
+      br
+        display: none
+
+    .header__bottom-button
+      width: 263px
+      height: 72px
+      display: flex
+      align-items: center
+      justify-content: center
+      display: inline-block
+      border-radius: 66px
+      font-size: 16px
+      transition: .3s
+      width: 100%
+
+      @media (max-width: 770px)
+        height: 47px
+        font-size: 16px
+
+      &.left
+        color: vars.$white
+        background: vars.$black
+
+        &:hover
+          background: vars.$orange
+          color: vars.$white
+
+      &.right
+        border: 2px solid vars.$black
+
+        @media (max-width: 770px)
+          background: vars.$white
+          border: none
+
+        &:hover
+          background: vars.$black
+          color: vars.$white

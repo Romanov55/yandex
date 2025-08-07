@@ -1,0 +1,130 @@
+@use '../vars'
+
+.party
+  @include vars.container
+  margin-top: 200px
+  margin: 200px auto 140px auto
+  position: relative
+
+  @media (max-width: 1280px)
+    margin: 200px 20px 140px 20px
+
+  @media (max-width: 770px)
+    margin: 120px 20px 176px 20px
+
+  .party__container
+    overflow: hidden
+
+  .party__top
+    display: flex
+    justify-content: space-between
+    letter-spacing: 0
+
+    .party__top-title
+      font-size: 54px
+      font-family: vars.$marri
+      text-transform: uppercase
+      line-height: 120%
+
+      @media (max-width: 770px)
+        font-size: 36px
+        line-height: 110%
+
+    .party__controller
+      display: flex
+      gap: 14px
+      align-items: center
+      color: vars.$text2
+      font-size: 16px
+      flex-shrink: 0
+
+      @media (max-width: 770px)
+        position: absolute
+        bottom: -76px
+        left: 50%
+        transform: translateX(-50%)
+
+      .party__counter-line
+        opacity: .6
+
+      .party__counter-all
+        opacity: .6
+
+  .party__blocks
+    margin-top: 60px
+    display: flex
+    gap: 20px
+    color: vars.$text2
+    overflow-x: auto
+    scroll-snap-type: x mandatory
+    scroll-behavior: smooth
+    scrollbar-width: none
+    -ms-overflow-style: none
+
+    ::-webkit-scrollbar 
+      display: none
+      width: 0
+      height: 0
+      background: transparent
+
+
+    .party__person
+      width: 394px
+      flex-shrink: 0
+      display: flex
+      flex-direction: column
+      align-items: center
+      letter-spacing: 0
+      line-height: 120%
+
+      @media (max-width: 1280px)
+        width: calc( 50% - 10px )
+
+      @media (max-width: 770px)
+        width: 100%
+
+      .party__person-img
+        width: 100%
+        max-width: 320px
+
+        @media (max-width: 770px)
+          width: 244px
+          height: 244px
+
+      .party__person-name
+        font-size: 24px
+        font-weight: 600
+        margin: 28px 0 6px 0
+        text-align: center
+
+        @media (max-width: 1280px)
+          font-size: 20px
+
+        @media (max-width: 770px)
+          font-size: 24px
+
+      .party__person-title
+        font-size: 20px
+        opacity: .6
+        margin-bottom: 20px
+        text-align: center
+
+        @media (max-width: 1280px)
+          font-size: 18px
+
+        @media (max-width: 770px)
+          font-size: 20px
+
+      .party__person-button
+        width: 135px
+        height: 35px
+        font-size: 16px
+        font-weight: 500
+        color: vars.$blue
+        border: 1px solid vars.$blue
+        border-radius: 62px
+        transition: .3s
+
+        &:hover
+          background: vars.$blue
+          color: vars.$white
